@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Map from "./components/Map";
 
 function App() {
 
@@ -24,6 +25,7 @@ function App() {
   const [cart, setCart] = useState([]);
 
   const addToCart = (product, shop) => {
+
     const item = {
       name: product.name,
       shop: shop.shop,
@@ -34,29 +36,50 @@ function App() {
   };
 
   return (
-    <div style={{ padding: "20px" }}>
+    <div style={{ padding: "20px", fontFamily: "Arial" }}>
+
       <h1>Nexora Local Market</h1>
 
       <h2>Products</h2>
 
       {products.map((product, index) => (
-        <div key={index} style={{ border: "1px solid gray", margin: "20px", padding: "10px" }}>
+
+        <div key={index} style={{
+          border: "1px solid #ddd",
+          borderRadius: "10px",
+          padding: "15px",
+          marginBottom: "20px"
+        }}>
+
           <h3>{product.name}</h3>
 
           {product.shops.map((shop, i) => (
-            <div key={i} style={{ marginLeft: "20px" }}>
+
+            <div key={i} style={{ marginBottom: "10px" }}>
+
               <p>
                 ₹{shop.price} – {shop.shop} (Owner: {shop.owner})
               </p>
 
-              <button onClick={() => addToCart(product, shop)}>
+              <button
+                onClick={() => addToCart(product, shop)}
+                style={{
+                  padding: "6px 12px",
+                  background: "green",
+                  color: "white",
+                  border: "none",
+                  borderRadius: "5px"
+                }}
+              >
                 Buy from {shop.shop}
               </button>
 
             </div>
+
           ))}
 
         </div>
+
       ))}
 
       <h2>Cart</h2>
@@ -70,6 +93,11 @@ function App() {
           </div>
         ))
       )}
+
+      <h2>Nearby Shops Map</h2>
+
+      <Map />
+
     </div>
   );
 }
