@@ -2,16 +2,16 @@ import React from "react";
 import ProductCard from "../components/ProductCard";
 
 const products = [
-  { id: 1, name: "Product 1", price: 100, color: "red", image: "/images/shop1.jpg" },
-  { id: 2, name: "Product 2", price: 150, color: "blue", image: "/images/shop2.jpg" },
-  { id: 3, name: "Product 3", price: 200, color: "green", image: "/images/shop3.jpg" },
+  { id: 1, name: "Laptop", price: 50000, color: "red", image: "/images/product1.jpg" },
+  { id: 2, name: "Smartphone", price: 20000, color: "blue", image: "/images/product1.jpg" },
+  { id: 3, name: "Headphones", price: 2000, color: "green", image: "/images/product1.jpg" },
 ];
 
 const Products = () => {
   return (
-    <div style={{ display: "flex", flexWrap: "wrap" }}>
-      {products.map((product) => (
-        <ProductCard key={product.id} product={product} />
+    <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}>
+      {products.map((p) => (
+        <ProductCard key={p.id} product={p} />
       ))}
     </div>
   );
