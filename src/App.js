@@ -1,16 +1,23 @@
 import React from "react";
-import Home from "./pages/Home";
-import Products from "./pages/Products";
-import Checkout from "./pages/Checkout";
-import Navbar from "./components/Navbar";
 
 function App() {
+  const products = [
+    { id: 1, name: "Sugar", price: 50 },
+    { id: 2, name: "Rice", price: 60 },
+    { id: 3, name: "Wheat", price: 40 }
+  ];
+
   return (
     <div>
-      <Navbar />
-      <Home />
-      <Products />
-      <Checkout />
+      <h1>Nexora Local Market</h1>
+
+      {products.map((product) => (
+        <div key={product.id}>
+          <h3>{product.name}</h3>
+          <p>Price: ₹{product.price}</p>
+          <button>Add to Cart</button>
+        </div>
+      ))}
     </div>
   );
 }
