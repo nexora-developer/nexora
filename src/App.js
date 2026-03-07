@@ -1,15 +1,14 @@
 import React from "react";
-import { CartProvider } from "./context/CartContext";
-import Products from "./pages/Products";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
 
 function App() {
   return (
-    <CartProvider>
-      <div style={{ fontFamily: "Arial, sans-serif", padding: "20px" }}>
-        <h1 style={{ textAlign: "center", color: "#FF6600" }}>NEXORA E-Commerce</h1>
-        <Products />
-      </div>
-    </CartProvider>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
+    </Router>
   );
 }
 
