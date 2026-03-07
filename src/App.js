@@ -1,16 +1,36 @@
 import React, { useState } from "react";
 
 function App() {
+
   const products = [
-    { id: 1, name: "Sugar", price: 50 },
-    { id: 2, name: "Rice", price: 60 },
-    { id: 3, name: "Wheat", price: 40 }
+    {
+      name: "Sugar",
+      shops: [
+        { shop: "Sharma Store", owner: "Rakesh", price: 50 },
+        { shop: "Gupta Shop", owner: "Amit", price: 48 },
+        { shop: "Khan Mart", owner: "Imran", price: 52 }
+      ]
+    },
+    {
+      name: "Rice",
+      shops: [
+        { shop: "Sharma Store", owner: "Rakesh", price: 60 },
+        { shop: "Gupta Shop", owner: "Amit", price: 58 },
+        { shop: "Khan Mart", owner: "Imran", price: 62 }
+      ]
+    }
   ];
 
   const [cart, setCart] = useState([]);
 
-  const addToCart = (product) => {
-    setCart([...cart, product]);
+  const addToCart = (product, shop) => {
+    const item = {
+      name: product.name,
+      shop: shop.shop,
+      price: shop.price
+    };
+
+    setCart([...cart, item]);
   };
 
   return (
@@ -19,11 +39,23 @@ function App() {
 
       <h2>Products</h2>
 
-      {products.map((product) => (
-        <div key={product.id} style={{ border: "1px solid gray", margin: "10px", padding: "10px" }}>
+      {products.map((product, index) => (
+        <div key={index} style={{ border: "1px solid gray", margin: "20px", padding: "10px" }}>
           <h3>{product.name}</h3>
-          <p>Price: ₹{product.price}</p>
-          <button onClick={() => addToCart(product)}>Add to Cart</button>
+
+          {product.shops.map((shop, i) => (
+            <div key={i} style={{ marginLeft: "20px" }}>
+              <p>
+                ₹{shop.price} – {shop.shop} (Owner: {shop.owner})
+              </p>
+
+              <button onClick={() => addToCart(product, shop)}>
+                Buy from {shop.shop}
+              </button>
+
+            </div>
+          ))}
+
         </div>
       ))}
 
@@ -34,7 +66,7 @@ function App() {
       ) : (
         cart.map((item, index) => (
           <div key={index}>
-            {item.name} - ₹{item.price}
+            {item.name} – ₹{item.price} ({item.shop})
           </div>
         ))
       )}
