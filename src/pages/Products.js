@@ -1,12 +1,21 @@
 import React from "react";
+import products from "../data/products"; // Ensure products.js exist
 
-function Products() {
+const Products = () => {
   return (
     <div>
-      <h2>Products Page</h2>
-      <p>All grocery items will appear here</p>
+      <h1>Products</h1>
+      <div style={{ display: "flex", flexWrap: "wrap" }}>
+        {products.map((product) => (
+          <div key={product.id} style={{ margin: "10px", border: "1px solid gray", padding: "10px" }}>
+            <img src={product.image} alt={product.name} width="150" />
+            <h3>{product.name}</h3>
+            <p>₹{product.price}</p>
+          </div>
+        ))}
+      </div>
     </div>
   );
-}
+};
 
 export default Products;
