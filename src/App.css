@@ -1,0 +1,12 @@
+body{
+margin:0;
+font-family:sans-serif;
+
+background:linear-gradient(
+135deg,
+#eef2ff,
+#f9fafb
+);
+
+min-height:100vh;
+}

@@ -1,0 +1,26 @@
+Hi.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #232f3e;
+  color: white;
+}
+
+.header .logo a {
+  color: #ff9900;
+  font-weight: bold;
+  font-size: 24px;
+  text-decoration: none;
+}
+
+.header nav a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.header nav a:hover {
+  color: #ff9900;
+}

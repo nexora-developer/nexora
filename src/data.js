@@ -1,0 +1,26 @@
+export const products = [
+{
+id:1,
+name:"Rice",
+price:50,
+image:"https://via.placeholder.com/200"
+},
+{
+id:2,
+name:"Wheat",
+price:40,
+image:"https://via.placeholder.com/200"
+},
+{
+id:3,
+name:"Sugar",
+price:60,
+image:"https://via.placeholder.com/200"
+},
+{
+id:4,
+name:"Oil",
+price:120,
+image:"https://via.placeholder.com/200"
+}
+]
