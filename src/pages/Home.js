@@ -1,20 +1,23 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useContext } from "react";
+import ProductCard from "../components/ProductCard";
+import { CartContext } from "../context/CartContext";
 
-const Home = () => {
+const Products = () => {
+  const { addToCart } = useContext(CartContext);
+
+  const products = [
+    { id: 1, name: "Shop 1 Rice", price: 100, color: "orange", image: "/images/shop1.jpg" },
+    { id: 2, name: "Shop 2 Sugar", price: 150, color: "green", image: "/images/shop2.jpg" },
+    { id: 3, name: "Shop 3 Oil", price: 200, color: "blue", image: "/images/shop3.jpg" },
+  ];
+
   return (
-    <div style={{ padding: "20px" }}>
-      <h1>Welcome to Nexora E-Commerce</h1>
-      <p>Explore Shops, Grain Exchange, Gas Booking and AI Features!</p>
-      <nav>
-        <Link to="/shops">Shops</Link> |{" "}
-        <Link to="/grain-exchange">Grain Exchange</Link> |{" "}
-        <Link to="/gas-booking">Gas Booking</Link> |{" "}
-        <Link to="/checkout">Checkout</Link> |{" "}
-        <Link to="/ai">AI Page</Link>
-      </nav>
+    <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}>
+      {products.map((p) => (
+        <ProductCard key={p.id} product={p} addToCart={addToCart} />
+      ))}
     </div>
   );
 };
 
-export default Home;
+export default Products;
