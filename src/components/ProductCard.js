@@ -1,15 +1,19 @@
-import React, { useContext } from "react";
-import { CartContext } from "../context/CartContext";
+import React from "react";
 
 const ProductCard = ({ product }) => {
-  const { addToCart } = useContext(CartContext);
-
   return (
-    <div style={{ margin: "10px", border: "1px solid gray", padding: "10px" }}>
-      <img src={product.image} alt={product.name} width="150" />
+    <div style={{
+      border: 2px solid ${product.color},
+      borderRadius: "8px",
+      padding: "10px",
+      width: "200px"
+    }}>
+      <img src={product.image} alt={product.name} style={{ width: "100%", height: "150px", objectFit: "cover" }} />
       <h3>{product.name}</h3>
       <p>₹{product.price}</p>
-      <button onClick={() => addToCart(product)}>Add to Cart</button>
+      <button style={{ padding: "5px 10px", backgroundColor: product.color, color: "white", border: "none", borderRadius: "4px", cursor: "pointer" }}>
+        Add to Cart
+      </button>
     </div>
   );
 };
