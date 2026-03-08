@@ -1,28 +1,46 @@
+// src/components/ProductCard.js
 import React from "react";
 
-const ProductCard = ({ product }) => {
+function ProductCard({ product }) {
   return (
     <div
       style={{
-        border: "2px solid " + product.color,
+        border: 2px solid ${product.color},
         borderRadius: "12px",
         padding: "10px",
         width: "220px",
         margin: "10px",
-        backgroundColor: "#fefefe",
-        boxShadow: "0 3px 6px rgba(0,0,0,0.1)",
-        transition: "transform 0.2s",
+        textAlign: "center",
+        backgroundColor: product.color,
       }}
     >
-      <img
-        src={product.image}
-        alt={product.name}
-        style={{ width: "100%", borderRadius: "8px" }}
-      />
+      {product.image ? (
+        <img
+          src={product.image}
+          alt={product.name}
+          style={{ width: "180px", height: "180px", objectFit: "cover" }}
+        />
+      ) : (
+        <div
+          style={{
+            width: "180px",
+            height: "180px",
+            backgroundColor: "#e0e0e0",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            fontSize: "16px",
+            color: "#555",
+            margin: "auto",
+          }}
+        >
+          Image not available
+        </div>
+      )}
       <h3>{product.name}</h3>
       <p>Price: ₹{product.price}</p>
     </div>
   );
-};
+}
 
 export default ProductCard;

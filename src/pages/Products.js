@@ -1,20 +1,16 @@
+// src/pages/Products.js
 import React from "react";
+import products from "../data/ProductData";
 import ProductCard from "../components/ProductCard";
 
-const products = [
-  { id: 1, name: "Laptop", price: 50000, color: "red", image: "/images/product1.jpg" },
-  { id: 2, name: "Smartphone", price: 20000, color: "blue", image: "/images/product1.jpg" },
-  { id: 3, name: "Headphones", price: 2000, color: "green", image: "/images/product1.jpg" },
-];
-
-const Products = () => {
+function Products() {
   return (
     <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}>
-      {products.map((p) => (
-        <ProductCard key={p.id} product={p} />
+      {products.map((product) => (
+        <ProductCard key={product.id} product={product} />
       ))}
     </div>
   );
-};
+}
 
 export default Products;
