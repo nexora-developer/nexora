@@ -29,7 +29,7 @@ justifyContent:"space-between"
 <Link to="/">Home</Link>
 <Link to="/products">Products</Link>
 <Link to="/cart">Cart</Link>
-
+<Link to="/map">Shops Map</Link>
 </div>
 
 <div>
