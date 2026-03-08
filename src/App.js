@@ -6,7 +6,7 @@ import Navbar from "./components/Navbar"
 import Products from "./pages/Products"
 import Cart from "./pages/Cart"
 import Login from "./pages/Login"
-
+import Map from "./pages/Map"
 function App(){
 
 const user = JSON.parse(localStorage.getItem("user"))
