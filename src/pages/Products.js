@@ -9,7 +9,8 @@ return(
 <div style={{
 display:"flex",
 flexWrap:"wrap",
-justifyContent:"center"
+justifyContent:"center",
+padding:"20px"
 }}>
 
 {products.map((p)=>(
