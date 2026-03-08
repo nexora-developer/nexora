@@ -1,11 +1,23 @@
 import React from "react";
 
-const Footer = () => {
-  return (
-    <footer style={{ textAlign: "center", padding: "20px", backgroundColor: "#222", color: "white", marginTop: "20px" }}>
-      &copy; 2026 Nexora. All rights reserved.
-    </footer>
-  );
-};
+function Footer(){
+
+return(
+
+<div style={{
+background:"#222",
+color:"white",
+textAlign:"center",
+padding:"20px",
+marginTop:"40px"
+}}>
+
+<p>© 2026 Nexora Smart Market</p>
+
+</div>
+
+)
+
+}
 
 export default Footer;
