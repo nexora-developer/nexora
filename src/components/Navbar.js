@@ -1,42 +1,44 @@
-import React,{useContext} from "react"
+import React from "react"
 import {Link} from "react-router-dom"
-import {CartContext} from "../context/CartContext"
 
 function Navbar(){
 
-const {cart}=useContext(CartContext)
+const user = JSON.parse(localStorage.getItem("user"))
+
+function logout(){
+
+localStorage.removeItem("user")
+window.location="/"
+
+}
 
 return(
 
 <div style={{
-background:"#1e293b",
+background:"#111",
 color:"white",
 padding:"15px",
 display:"flex",
 justifyContent:"space-between"
 }}>
 
-<h2>Nexora Market</h2>
+<h2>Nexora</h2>
 
 <div>
 
-<Link to="/" style={{color:"white",margin:"10px"}}>Home</Link>
+<Link to="/">Home</Link>
+<Link to="/products">Products</Link>
+<Link to="/cart">Cart</Link>
 
-<Link to="/products" style={{color:"white",margin:"10px"}}>Products</Link>
+</div>
 
-<Link to="/orders" style={{color:"white",margin:"10px"}}>Orders</Link>
+<div>
 
-<Link to="/cart" style={{color:"white",margin:"10px"}}>
+<h3>Hello {user?.name}</h3>
 
-Cart ({cart.length})
-
-</Link>
-
-<Link to="/login" style={{color:"white",margin:"10px"}}>
-
-Login
-
-</Link>
+<button onClick={logout}>
+Logout
+</button>
 
 </div>
 
