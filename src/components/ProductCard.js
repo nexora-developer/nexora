@@ -1,27 +1,48 @@
 import React from "react";
 
-function ProductCard(props){
+function ProductCard({ product, addToCart }) {
 
-  const product = props.product;
+  return (
 
-  return(
     <div style={{
       border:"1px solid #ddd",
+      borderRadius:"10px",
       padding:"10px",
-      width:"200px",
+      width:"220px",
       margin:"10px",
-      textAlign:"center"
+      textAlign:"center",
+      backgroundColor:"#fff",
+      boxShadow:"0px 2px 5px rgba(0,0,0,0.1)"
     }}>
 
-      <img src={product.image} alt="product" width="180"/>
+      <img
+        src={product.image}
+        alt="product"
+        style={{width:"200px",height:"200px"}}
+      />
 
       <h3>{product.name}</h3>
 
+      <p>Category: {product.category}</p>
+
       <p>₹{product.price}</p>
 
-      <button>Add To Cart</button>
+      <button
+        onClick={()=>addToCart(product)}
+        style={{
+          padding:"8px",
+          backgroundColor:"#007bff",
+          color:"white",
+          border:"none",
+          borderRadius:"5px",
+          cursor:"pointer"
+        }}
+      >
+        Add To Cart
+      </button>
 
     </div>
+
   )
 
 }

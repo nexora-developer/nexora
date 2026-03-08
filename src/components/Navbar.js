@@ -1,23 +1,44 @@
 import React from "react";
 
-function Navbar() {
-  return (
+function Navbar({cartCount}){
+
+  return(
+
     <div style={{
-      backgroundColor: "#111",
-      color: "white",
-      padding: "15px",
-      display: "flex",
-      justifyContent: "space-between"
+      backgroundColor:"#111",
+      color:"white",
+      padding:"15px",
+      display:"flex",
+      justifyContent:"space-between",
+      alignItems:"center"
     }}>
-      <h2>Nexora</h2>
+
+      <h2>Nexora Market</h2>
+
+      <input
+        placeholder="Search products..."
+        style={{
+          padding:"8px",
+          width:"300px",
+          borderRadius:"5px",
+          border:"none"
+        }}
+      />
 
       <div>
-        <a href="/" style={{color:"white", marginRight:"20px"}}>Home</a>
-        <a href="/products" style={{color:"white", marginRight:"20px"}}>Products</a>
-        <a href="/about" style={{color:"white"}}>About</a>
+
+        <span style={{marginRight:"20px"}}>Home</span>
+
+        <span style={{marginRight:"20px"}}>Products</span>
+
+        <span>Cart ({cartCount})</span>
+
       </div>
+
     </div>
-  );
+
+  )
+
 }
 
-export default Navbar;
+export default Navbar
