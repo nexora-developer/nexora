@@ -1,24 +1,14 @@
 import React from "react";
 
-function Cart({ cart }){
+function Cart(){
 
 return(
 
-<div style={{padding:"30px"}}>
+<div style={{padding:"40px"}}>
 
 <h2>Your Cart</h2>
 
-{cart.length===0 && <p>No items in cart</p>}
-
-{cart.map((item,index)=>(
-
-<div key={index}>
-
-<p>{item.name} - ₹{item.price}</p>
-
-</div>
-
-))}
+<p>No items yet</p>
 
 </div>
 
@@ -26,4 +16,4 @@ return(
 
 }
 
-export default Cart;
+export default Cart
