@@ -5,14 +5,16 @@ function Home(){
 return(
 
 <div style={{
-textAlign:"center",
 padding:"40px",
-background:"linear-gradient(#ffecd2,#fcb69f)"
+textAlign:"center",
+background:"linear-gradient(#84fab0,#8fd3f4)"
 }}>
 
 <h1>Welcome To Nexora</h1>
 
-<p>World's First Smart Market</p>
+<h3>World's First Smart Daily Market</h3>
+
+<p>Order vegetables, grocery, milk, sweets and gas cylinder instantly.</p>
 
 </div>
 
