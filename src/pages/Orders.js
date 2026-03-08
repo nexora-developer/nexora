@@ -1,12 +1,19 @@
-import React from "react";
+import React from "react"
 
-function Orders() {
-  return (
-    <div style={{ padding: "20px" }}>
-      <h1>My Orders Page</h1>
-      <p>Your past orders will be shown here.</p>
-    </div>
-  );
+function Orders(){
+
+return(
+
+<div style={{padding:"40px"}}>
+
+<h2>Your Orders</h2>
+
+<p>No orders yet</p>
+
+</div>
+
+)
+
 }
 
-export default Orders;
+export default Orders
