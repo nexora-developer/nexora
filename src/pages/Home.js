@@ -4,7 +4,11 @@ function Home(){
 
 return(
 
-<div style={{textAlign:"center",padding:"40px"}}>
+<div style={{
+textAlign:"center",
+padding:"40px",
+background:"linear-gradient(#ffecd2,#fcb69f)"
+}}>
 
 <h1>Welcome To Nexora</h1>
 
