@@ -1,12 +1,13 @@
-import React from "react";
-import {BrowserRouter,Routes,Route} from "react-router-dom";
+import React from "react"
+import {BrowserRouter,Routes,Route} from "react-router-dom"
 
 import Navbar from "./components/Navbar"
 
 import Home from "./pages/Home"
 import Products from "./pages/Products"
 import Cart from "./pages/Cart"
-import GasBooking from "./pages/GasBooking"
+import Login from "./pages/Login"
+import Orders from "./pages/Orders"
 
 function App(){
 
@@ -24,7 +25,9 @@ return(
 
 <Route path="/cart" element={<Cart/>}/>
 
-<Route path="/gas" element={<GasBooking/>}/>
+<Route path="/login" element={<Login/>}/>
+
+<Route path="/orders" element={<Orders/>}/>
 
 </Routes>
 
