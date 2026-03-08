@@ -1,21 +1,43 @@
-import React from "react"
-import products from "../data/products"
-import ProductCard from "../components/ProductCard"
+import React,{useState} from "react";
+import products from "../data/products";
+import ProductCard from "../components/ProductCard";
 
-function Products({addToCart}){
+function Products({ addToCart }){
+
+const [category,setCategory] = useState("All")
+
+const filteredProducts = category==="All"
+? products
+: products.filter(p=>p.category===category)
 
 return(
 
+<div style={{padding:"20px"}}>
+
+<h2>Products</h2>
+
+<div style={{marginBottom:"20px"}}>
+
+<button onClick={()=>setCategory("All")}>All</button>
+<button onClick={()=>setCategory("Grocery")}>Grocery</button>
+<button onClick={()=>setCategory("Electronics")}>Electronics</button>
+
+</div>
+
 <div style={{
 display:"flex",
-flexWrap:"wrap",
-justifyContent:"center",
-padding:"20px"
+flexWrap:"wrap"
 }}>
 
-{products.map((p)=>(
-<ProductCard key={p.id} product={p} addToCart={addToCart}/>
+{filteredProducts.map((p)=>(
+<ProductCard
+key={p.id}
+product={p}
+addToCart={addToCart}
+/>
 ))}
+
+</div>
 
 </div>
 
@@ -23,4 +45,4 @@ padding:"20px"
 
 }
 
-export default Products
+export default Products;
