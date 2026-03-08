@@ -1,6 +1,9 @@
-import React from "react";
+import React,{useContext} from "react"
+import {CartContext} from "../context/CartContext"
 
 function Cart(){
+
+const {cart,removeFromCart}=useContext(CartContext)
 
 return(
 
@@ -8,7 +11,30 @@ return(
 
 <h2>Your Cart</h2>
 
-<p>No items yet</p>
+{cart.length===0 && <p>Cart empty</p>}
+
+{cart.map((item,index)=>(
+
+<div key={index}
+style={{
+border:"1px solid #ddd",
+padding:"15px",
+marginBottom:"10px"
+}}>
+
+<h3>{item.name}</h3>
+
+<p>₹{item.price}</p>
+
+<button onClick={()=>removeFromCart(index)}>
+
+Remove
+
+</button>
+
+</div>
+
+))}
 
 </div>
 
