@@ -1,37 +1,29 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-function Navbar({ cartCount }) {
+function Navbar(){
 
-return (
+return(
 
 <div style={{
-background:"linear-gradient(90deg,#ff6a00,#ee0979)",
-padding:"15px",
+background:"#0f172a",
 color:"white",
+padding:"15px",
 display:"flex",
-justifyContent:"space-between",
-alignItems:"center"
+justifyContent:"space-between"
 }}>
 
-<h2>Nexora</h2>
-
-<input
-placeholder="Search products..."
-style={{
-padding:"8px",
-width:"300px",
-borderRadius:"6px",
-border:"none"
-}}
-/>
+<h2>Nexora Market</h2>
 
 <div>
 
-<span style={{marginRight:"20px"}}>Home</span>
+<Link to="/" style={{color:"white",margin:"10px"}}>Home</Link>
 
-<span style={{marginRight:"20px"}}>Products</span>
+<Link to="/products" style={{color:"white",margin:"10px"}}>Products</Link>
 
-<span>Cart ({cartCount})</span>
+<Link to="/cart" style={{color:"white",margin:"10px"}}>Cart</Link>
+
+<Link to="/gas" style={{color:"white",margin:"10px"}}>Gas Booking</Link>
 
 </div>
 
@@ -41,4 +33,4 @@ border:"none"
 
 }
 
-export default Navbar;
+export default Navbar
