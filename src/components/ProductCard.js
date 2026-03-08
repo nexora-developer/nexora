@@ -1,7 +1,6 @@
-// src/components/ProductCard.js
 import React from "react";
 
-function ProductCard({ product }) {
+const ProductCard = ({ product }) => {
   return (
     <div
       style={{
@@ -11,36 +10,30 @@ function ProductCard({ product }) {
         width: "220px",
         margin: "10px",
         textAlign: "center",
-        backgroundColor: product.color,
+        boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
       }}
     >
-      {product.image ? (
-        <img
-          src={product.image}
-          alt={product.name}
-          style={{ width: "180px", height: "180px", objectFit: "cover" }}
-        />
-      ) : (
-        <div
-          style={{
-            width: "180px",
-            height: "180px",
-            backgroundColor: "#e0e0e0",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            fontSize: "16px",
-            color: "#555",
-            margin: "auto",
-          }}
-        >
-          Image not available
-        </div>
-      )}
-      <h3>{product.name}</h3>
-      <p>Price: ₹{product.price}</p>
+      <img
+        src={product.image}
+        alt={product.name}
+        style={{ width: "100%", borderRadius: "8px" }}
+      />
+      <h3 style={{ color: product.color }}>{product.name}</h3>
+      <p>₹{product.price}</p>
+      <button
+        style={{
+          backgroundColor: product.color,
+          color: "#fff",
+          border: "none",
+          padding: "8px 12px",
+          borderRadius: "5px",
+          cursor: "pointer",
+        }}
+      >
+        Add to Cart
+      </button>
     </div>
   );
-}
+};
 
 export default ProductCard;
