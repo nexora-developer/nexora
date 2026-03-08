@@ -1,7 +1,8 @@
-import React,{useState} from "react"
-import Navbar from "./components/Navbar"
-import Home from "./pages/Home"
-import Products from "./pages/Products"
+import React,{useState} from "react";
+import Navbar from "./components/Navbar";
+import Products from "./pages/Products";
+import Cart from "./pages/Cart";
+import Footer from "./components/Footer";
 
 function App(){
 
@@ -19,9 +20,11 @@ return(
 
 <Navbar cartCount={cart.length}/>
 
-<Home/>
-
 <Products addToCart={addToCart}/>
+
+<Cart cart={cart}/>
+
+<Footer/>
 
 </div>
 
@@ -29,4 +32,4 @@ return(
 
 }
 
-export default App
+export default App;
