@@ -4,17 +4,23 @@ function Home(){
 
 return(
 
-<div style={{
-padding:"40px",
-textAlign:"center",
-background:"linear-gradient(#84fab0,#8fd3f4)"
-}}>
+<div style={{padding:"40px"}}>
 
-<h1>Welcome To Nexora</h1>
+<h1>Welcome to Nexora Market</h1>
 
-<h3>World's First Smart Daily Market</h3>
+<p>
+Daily needs delivery app
+</p>
 
-<p>Order vegetables, grocery, milk, sweets and gas cylinder instantly.</p>
+<h2>Categories</h2>
+
+<ul>
+<li>Vegetables</li>
+<li>Grocery</li>
+<li>Dairy</li>
+<li>Gas Cylinder</li>
+<li>Cake & Sweets</li>
+</ul>
 
 </div>
 
