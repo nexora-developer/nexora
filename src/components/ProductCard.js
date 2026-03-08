@@ -1,21 +1,25 @@
 import React from "react";
 
-function ProductCard({product,addToCart}){
+function ProductCard({ product, addToCart }) {
 
-return(
+return (
 
 <div style={{
 border:"1px solid #ddd",
+borderRadius:"10px",
 padding:"15px",
 width:"220px",
 margin:"10px",
-borderRadius:"10px",
 textAlign:"center",
-background:"linear-gradient(#ffffff,#f2f2f2)",
-boxShadow:"0px 3px 8px rgba(0,0,0,0.2)"
+background:"#fff",
+boxShadow:"0 3px 8px rgba(0,0,0,0.2)"
 }}>
 
-<img src={product.image} width="180"/>
+<img
+src={product.image}
+alt="product"
+style={{width:"180px"}}
+/>
 
 <h3>{product.name}</h3>
 
@@ -42,4 +46,4 @@ AddTo Cart
 
 }
 
-export default ProductCard
+export default ProductCard;
