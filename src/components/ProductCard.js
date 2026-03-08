@@ -11,7 +11,8 @@ width:"220px",
 margin:"10px",
 borderRadius:"10px",
 textAlign:"center",
-background:"#fff"
+background:"linear-gradient(#ffffff,#f2f2f2)",
+boxShadow:"0px 3px 8px rgba(0,0,0,0.2)"
 }}>
 
 <img src={product.image} width="180"/>
