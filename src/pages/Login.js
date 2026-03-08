@@ -1,12 +1,47 @@
-import React from "react";
+import React,{useState} from "react"
 
-function Login() {
-  return (
-    <div style={{ padding: "20px" }}>
-      <h1>Login Page</h1>
-      <p>User login system will be implemented here.</p>
-    </div>
-  );
+function Login(){
+
+const[email,setEmail]=useState("")
+const[password,setPassword]=useState("")
+
+function handleLogin(){
+
+alert("Login Successful")
+
 }
 
-export default Login;
+return(
+
+<div style={{padding:"40px"}}>
+
+<h2>Login</h2>
+
+<input
+placeholder="Email"
+onChange={(e)=>setEmail(e.target.value)}
+/>
+
+<br/><br/>
+
+<input
+type="password"
+placeholder="Password"
+onChange={(e)=>setPassword(e.target.value)}
+/>
+
+<br/><br/>
+
+<button onClick={handleLogin}>
+
+Login
+
+</button>
+
+</div>
+
+)
+
+}
+
+export default Login
