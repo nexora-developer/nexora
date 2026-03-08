@@ -1,17 +1,61 @@
-<div style={{marginBottom:"20px"}}>
+import React, { useState } from "react";
+import products from "../data/products";
+import ProductCard from "../components/ProductCard";
 
-<button onClick={()=>setCategory("All")}>All</button>
+function Products({ addToCart }) {
 
-<button onClick={()=>setCategory("Vegetables")}>Vegetables</button>
+const [category, setCategory] = useState("All");
 
-<button onClick={()=>setCategory("Dairy")}>Dairy</button>
+const filteredProducts =
+category === "All"
+? products
+: products.filter((p) => p.category === category);
 
-<button onClick={()=>setCategory("Grocery")}>Grocery</button>
+return (
 
-<button onClick={()=>setCategory("Cakes")}>Cakes</button>
+<div style={{ padding: "20px" }}>
 
-<button onClick={()=>setCategory("Sweets")}>Sweets</button>
+<h2>Products</h2>
 
-<button onClick={()=>setCategory("Gas")}>Gas</button>
+<div style={{ marginBottom: "20px" }}>
+
+<button onClick={() => setCategory("All")}>All</button>
+
+<button onClick={() => setCategory("Vegetables")}>Vegetables</button>
+
+<button onClick={() => setCategory("Dairy")}>Dairy</button>
+
+<button onClick={() => setCategory("Grocery")}>Grocery</button>
+
+<button onClick={() => setCategory("Cakes")}>Cakes</button>
+
+<button onClick={() => setCategory("Sweets")}>Sweets</button>
+
+<button onClick={() => setCategory("Gas")}>Gas</button>
 
 </div>
+
+<div style={{
+display: "flex",
+flexWrap: "wrap"
+}}>
+
+{filteredProducts.map((p) => (
+
+<ProductCard
+key={p.id}
+product={p}
+addToCart={addToCart}
+/>
+
+))}
+
+</div>
+
+</div>
+
+);
+
+}
+
+export default Products;
