@@ -1,11 +1,11 @@
 import React from "react";
 
-function Navbar({cartCount}){
+function Navbar({ cartCount }) {
 
-return(
+return (
 
 <div style={{
-background:"#111",
+background:"linear-gradient(90deg,#ff6a00,#ee0979)",
 color:"white",
 padding:"15px",
 display:"flex",
@@ -13,7 +13,7 @@ justifyContent:"space-between",
 alignItems:"center"
 }}>
 
-<h2>Nexora</h2>
+<h2>Nexora Market</h2>
 
 <input
 placeholder="Search products..."
@@ -30,8 +30,6 @@ border:"none"
 <span style={{marginRight:"20px"}}>Home</span>
 
 <span style={{marginRight:"20px"}}>Products</span>
-
-<span style={{marginRight:"20px"}}>About</span>
 
 <span>Cart ({cartCount})</span>
 
