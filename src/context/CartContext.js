@@ -1,49 +1,68 @@
-import React, { createContext, useState, useEffect } from "react";
+import React,{createContext,useState} from "react"
 
-export const CartContext = createContext();
+export const CartContext = createContext()
 
-function CartProvider({ children }) {
+function CartProvider({children}){
 
-const [cart, setCart] = useState([]);
+const [cart,setCart] = useState([])
 
-useEffect(() => {
+function addToCart(product){
 
-const savedCart = localStorage.getItem("cart");
+const exist = cart.find(i=>i.id===product.id)
 
-if (savedCart) {
-setCart(JSON.parse(savedCart));
-}
+if(exist){
 
-}, []);
+setCart(cart.map(i=>
+i.id===product.id
+? {...i,qty:i.qty+1}
+: i
+))
 
-useEffect(() => {
+}else{
 
-localStorage.setItem("cart", JSON.stringify(cart));
-
-}, [cart]);
-
-function addToCart(product) {
-
-setCart([...cart, product]);
+setCart([...cart,{...product,qty:1}])
 
 }
 
-function removeFromCart(index) {
+}
 
-setCart(cart.filter((_, i) => i !== index));
+function increase(id){
+
+setCart(cart.map(i=>
+i.id===id
+? {...i,qty:i.qty+1}
+: i
+))
 
 }
 
-return (
+function decrease(id){
 
-<CartContext.Provider value={{ cart, addToCart, removeFromCart }}>
+setCart(cart.map(i=>
+i.id===id
+? {...i,qty:i.qty-1}
+: i
+).filter(i=>i.qty>0))
+
+}
+
+return(
+
+<CartContext.Provider
+value={{
+cart,
+addToCart,
+increase,
+decrease
+}}
+>
 
 {children}
 
 </CartContext.Provider>
 
-);
+)
 
 }
 
-export default CartProvider;
+export default CartProvider
