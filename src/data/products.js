@@ -4,80 +4,48 @@ const products = [
 id:1,
 name:"Tomato",
 price:30,
-category:"Vegetables",
-image:"https://via.placeholder.com/200"
+category:"vegetables",
+image:"https://images.unsplash.com/photo-1561136594-7f68413baa99"
 },
 
 {
 id:2,
 name:"Potato",
 price:25,
-category:"Vegetables",
-image:"https://via.placeholder.com/200"
+category:"vegetables",
+image:"https://images.unsplash.com/photo-1518977676601-b53f82aba655"
 },
 
 {
 id:3,
 name:"Milk",
 price:55,
-category:"Dairy",
-image:"https://via.placeholder.com/200"
+category:"dairy",
+image:"https://images.unsplash.com/photo-1582719478250-c89cae4dc85b"
 },
 
 {
 id:4,
-name:"Paneer",
-price:300,
-category:"Dairy",
-image:"https://via.placeholder.com/200"
+name:"Rice",
+price:80,
+category:"grocery",
+image:"https://images.unsplash.com/photo-1586201375761-83865001e31c"
 },
 
 {
 id:5,
-name:"Rice",
-price:80,
-category:"Grocery",
-image:"https://via.placeholder.com/200"
+name:"Gas Cylinder",
+price:1100,
+category:"gas",
+image:"https://images.unsplash.com/photo-1603398938378-e54eab446dde"
 },
 
 {
 id:6,
-name:"Sugar",
-price:45,
-category:"Grocery",
-image:"https://via.placeholder.com/200"
-},
-
-{
-id:7,
 name:"Chocolate Cake",
 price:450,
-category:"Cakes",
-image:"https://via.placeholder.com/200"
-},
-
-{
-id:8,
-name:"Rasgulla",
-price:200,
-category:"Sweets",
-image:"https://via.placeholder.com/200"
-},
-
-{
-id:9,
-name:"Gas Cylinder",
-price:1100,
-category:"Gas",
-image:"https://via.placeholder.com/200"
-},
-
-{
-id:10,
-name:"Cooking Oil",
-price:180,
-category:"Grocery",
-image:"https://via.placeholder.com/200"
+category:"sweets",
+image:"https://images.unsplash.com/photo-1605478907713-5b0c82a2f21b"
 }
 
 ]

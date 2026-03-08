@@ -1,86 +1,49 @@
-import React from "react";
-import {BrowserRouter,Routes,Route} from "react-router-dom";
+import React, { createContext, useState, useEffect } from "react";
 
-import Navbar from "./components/Navbar"
+export const CartContext = createContext();
 
-import Home from "./pages/Home"
-import Products from "./pages/Products"
-import Cart from "./pages/Cart"
-import GasBooking from "./pages/GasBooking"
+function CartProvider({ children }) {
 
-function App(){
+const [cart, setCart] = useState([]);
 
-return(
+useEffect(() => {
 
-<BrowserRouter>
+const savedCart = localStorage.getItem("cart");
 
-<Navbar/>
+if (savedCart) {
+setCart(JSON.parse(savedCart));
+}
 
-<Routes>
+}, []);
 
-<Route path="/" element={<Home/>}/>
+useEffect(() => {
 
-<Route path="/products" element={<Products/>}/>
+localStorage.setItem("cart", JSON.stringify(cart));
 
-<Route path="/cart" element={<Cart/>}/>
+}, [cart]);
 
-<Route path="/gas" element={<GasBooking/>}/>
+function addToCart(product) {
 
-</Routes>
-
-</BrowserRouter>
-
-)
+setCart([...cart, product]);
 
 }
 
-export default App
-import React,{createContext,useState,useEffect} from "react";
+function removeFromCart(index) {
 
-export const CartContext=createContext()
-
-function CartProvider({children}){
-
-const [cart,setCart]=useState([])
-
-useEffect(()=>{
-
-const savedCart=localStorage.getItem("cart")
-
-if(savedCart){
-setCart(JSON.parse(savedCart))
-}
-
-},[])
-
-useEffect(()=>{
-
-localStorage.setItem("cart",JSON.stringify(cart))
-
-},[cart])
-
-function addToCart(product){
-
-setCart([...cart,product])
+setCart(cart.filter((_, i) => i !== index));
 
 }
 
-function removeFromCart(index){
+return (
 
-setCart(cart.filter((_,i)=>i!==index))
-
-}
-
-return(
-
-<CartContext.Provider value={{cart,addToCart,removeFromCart}}>
+<CartContext.Provider value={{ cart, addToCart, removeFromCart }}>
 
 {children}
 
 </CartContext.Provider>
 
-)
+);
 
 }
 
-export default CartProvider
+export default CartProvider;
