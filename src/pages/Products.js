@@ -1,16 +1,9 @@
-// src/pages/Products.js
-import React from "react";
-import products from "../data/ProductData";
-import ProductCard from "../components/ProductCard";
+const products = Array.from({ length: 29 }, (_, i) => ({
+  id: i + 1,
+  name: Product ${i + 1},
+  price: 100 + i * 50,
+  color: hsl(${(i + 1) * 12}, 70%, 50%),
+  image: /images/product${i + 1}.png,
+}));
 
-function Products() {
-  return (
-    <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}>
-      {products.map((product) => (
-        <ProductCard key={product.id} product={product} />
-      ))}
-    </div>
-  );
-}
-
-export default Products;
+export default products;

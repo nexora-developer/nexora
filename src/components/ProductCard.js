@@ -4,7 +4,7 @@ const ProductCard = ({ product }) => {
   return (
     <div
       style={{
-        border: 2px solid ${product.color},
+        border: 2px solid ${product.color}, // ✅ backticks for dynamic color
         borderRadius: "12px",
         padding: "10px",
         width: "220px",
