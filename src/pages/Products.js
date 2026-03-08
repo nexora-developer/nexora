@@ -1,9 +1,21 @@
-const products = Array.from({ length: 29 }, (_, i) => ({
-  id: i + 1,
-  name: Product ${i + 1},
-  price: 100 + i * 50,
-  color: hsl(${(i + 1) * 12}, 70%, 50%),
-  image: /images/product${i + 1}.png,
-}));
+import React from "react";
+import products from "../data/products";
+import ProductCard from "../components/ProductCard";
 
-export default products;
+function Products(){
+
+  return(
+
+    <div style={{display:"flex",flexWrap:"wrap"}}>
+
+      {products.map((item)=>(
+        <ProductCard key={item.id} product={item}/>
+      ))}
+
+    </div>
+
+  )
+
+}
+
+export default Products;

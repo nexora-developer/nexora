@@ -1,15 +1,12 @@
 import React from "react";
-import ProductCard from "../components/ProductCard";
-import products from "../product";
 
-function Home() {
-  return (
-    <div style={{ display: "flex", flexWrap: "wrap" }}>
-      {products.map((p) => (
-        <ProductCard key={p.id} product={p} />
-      ))}
+function Home(){
+  return(
+    <div>
+      <h1>Welcome to Nexora</h1>
+      <p>World's first smart market</p>
     </div>
-  );
+  )
 }
 
 export default Home;

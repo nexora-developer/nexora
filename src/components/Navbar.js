@@ -1,20 +1,23 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
-const Navbar = () => {
+function Navbar() {
   return (
-    <nav style={{ padding: "10px 20px", backgroundColor: "#007bff", color: "white", display: "flex", justifyContent: "space-between" }}>
-      <h2>Nexora Store</h2>
+    <div style={{
+      backgroundColor: "#111",
+      color: "white",
+      padding: "15px",
+      display: "flex",
+      justifyContent: "space-between"
+    }}>
+      <h2>Nexora</h2>
+
       <div>
-        <Link to="/" style={{ color: "white", margin: "0 10px" }}>Home</Link>
-        <Link to="/products" style={{ color: "white", margin: "0 10px" }}>Products</Link>
-        <Link to="/shops" style={{ color: "white", margin: "0 10px" }}>Shops</Link>
-        <Link to="/grain-exchange" style={{ color: "white", margin: "0 10px" }}>Grain Exchange</Link>
-        <Link to="/gas-booking" style={{ color: "white", margin: "0 10px" }}>Gas Booking</Link>
-        <Link to="/contact" style={{ color: "white", margin: "0 10px" }}>Contact</Link>
+        <a href="/" style={{color:"white", marginRight:"20px"}}>Home</a>
+        <a href="/products" style={{color:"white", marginRight:"20px"}}>Products</a>
+        <a href="/about" style={{color:"white"}}>About</a>
       </div>
-    </nav>
+    </div>
   );
-};
+}
 
 export default Navbar;
