@@ -1,61 +1,46 @@
-import React, { useState } from "react";
-import products from "../data/products";
-import ProductCard from "../components/ProductCard";
+import React from "react";
 
-function Products({ addToCart }) {
+const products=[
+{name:"Tomato",price:30},
+{name:"Potato",price:25},
+{name:"Rice",price:80},
+{name:"Milk",price:55},
+{name:"Cake",price:400}
+]
 
-const [category, setCategory] = useState("All");
+function Products(){
 
-const filteredProducts =
-category === "All"
-? products
-: products.filter((p) => p.category === category);
-
-return (
-
-<div style={{ padding: "20px" }}>
-
-<h2>Products</h2>
-
-<div style={{ marginBottom: "20px" }}>
-
-<button onClick={() => setCategory("All")}>All</button>
-
-<button onClick={() => setCategory("Vegetables")}>Vegetables</button>
-
-<button onClick={() => setCategory("Dairy")}>Dairy</button>
-
-<button onClick={() => setCategory("Grocery")}>Grocery</button>
-
-<button onClick={() => setCategory("Cakes")}>Cakes</button>
-
-<button onClick={() => setCategory("Sweets")}>Sweets</button>
-
-<button onClick={() => setCategory("Gas")}>Gas</button>
-
-</div>
+return(
 
 <div style={{
-display: "flex",
-flexWrap: "wrap"
+display:"grid",
+gridTemplateColumns:"repeat(3,1fr)",
+gap:"20px",
+padding:"40px"
 }}>
 
-{filteredProducts.map((p) => (
+{products.map((p,i)=>(
 
-<ProductCard
-key={p.id}
-product={p}
-addToCart={addToCart}
-/>
+<div key={i}
+style={{
+border:"1px solid #ddd",
+padding:"20px"
+}}>
+
+<h3>{p.name}</h3>
+
+<p>₹{p.price}</p>
+
+<button>Add to Cart</button>
+
+</div>
 
 ))}
 
 </div>
 
-</div>
-
-);
+)
 
 }
 
-export default Products;
+export default Products
