@@ -1,12 +1,15 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React,{useContext} from "react"
+import {Link} from "react-router-dom"
+import {CartContext} from "../context/CartContext"
 
 function Navbar(){
+
+const {cart}=useContext(CartContext)
 
 return(
 
 <div style={{
-background:"#0f172a",
+background:"#1e293b",
 color:"white",
 padding:"15px",
 display:"flex",
@@ -21,9 +24,19 @@ justifyContent:"space-between"
 
 <Link to="/products" style={{color:"white",margin:"10px"}}>Products</Link>
 
-<Link to="/cart" style={{color:"white",margin:"10px"}}>Cart</Link>
+<Link to="/orders" style={{color:"white",margin:"10px"}}>Orders</Link>
 
-<Link to="/gas" style={{color:"white",margin:"10px"}}>Gas Booking</Link>
+<Link to="/cart" style={{color:"white",margin:"10px"}}>
+
+Cart ({cart.length})
+
+</Link>
+
+<Link to="/login" style={{color:"white",margin:"10px"}}>
+
+Login
+
+</Link>
 
 </div>
 
