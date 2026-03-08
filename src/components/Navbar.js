@@ -6,21 +6,21 @@ return (
 
 <div style={{
 background:"linear-gradient(90deg,#ff6a00,#ee0979)",
-color:"white",
 padding:"15px",
+color:"white",
 display:"flex",
 justifyContent:"space-between",
 alignItems:"center"
 }}>
 
-<h2>Nexora Market</h2>
+<h2>Nexora</h2>
 
 <input
 placeholder="Search products..."
 style={{
 padding:"8px",
 width:"300px",
-borderRadius:"5px",
+borderRadius:"6px",
 border:"none"
 }}
 />
@@ -41,4 +41,4 @@ border:"none"
 
 }
 
-export default Navbar
+export default Navbar;
