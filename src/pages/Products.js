@@ -1,21 +1,25 @@
-import React from "react";
-import products from "../data/products";
-import ProductCard from "../components/ProductCard";
+import React from "react"
+import products from "../data/products"
+import ProductCard from "../components/ProductCard"
 
-function Products(){
+function Products({addToCart}){
 
-  return(
+return(
 
-    <div style={{display:"flex",flexWrap:"wrap"}}>
+<div style={{
+display:"flex",
+flexWrap:"wrap",
+justifyContent:"center"
+}}>
 
-      {products.map((item)=>(
-        <ProductCard key={item.id} product={item}/>
-      ))}
+{products.map((p)=>(
+<ProductCard key={p.id} product={p} addToCart={addToCart}/>
+))}
 
-    </div>
+</div>
 
-  )
+)
 
 }
 
-export default Products;
+export default Products

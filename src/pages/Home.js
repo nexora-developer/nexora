@@ -1,12 +1,19 @@
 import React from "react";
 
 function Home(){
-  return(
-    <div>
-      <h1>Welcome to Nexora</h1>
-      <p>World's first smart market</p>
-    </div>
-  )
+
+return(
+
+<div style={{textAlign:"center",padding:"40px"}}>
+
+<h1>Welcome To Nexora</h1>
+
+<p>World's First Smart Market</p>
+
+</div>
+
+)
+
 }
 
-export default Home;
+export default Home

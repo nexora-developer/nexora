@@ -1,9 +1,11 @@
-const products = Array.from({ length: 29 }, (_, i) => ({
-  id: i + 1,
-  name: "Product " + (i + 1),
-  price: 100 + i * 10,
-  category: i % 2 === 0 ? "Grocery" : "Electronics",
-  image: "https://via.placeholder.com/200"
-}));
+const products = Array.from({length:29},(_,i)=>({
 
-export default products;
+id:i+1,
+name:"Product "+(i+1),
+price:100+i*20,
+category:i%2===0?"Grocery":"Electronics",
+image:"https://via.placeholder.com/200"
+
+}))
+
+export default products

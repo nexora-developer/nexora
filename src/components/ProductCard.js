@@ -1,50 +1,44 @@
 import React from "react";
 
-function ProductCard({ product, addToCart }) {
+function ProductCard({product,addToCart}){
 
-  return (
+return(
 
-    <div style={{
-      border:"1px solid #ddd",
-      borderRadius:"10px",
-      padding:"10px",
-      width:"220px",
-      margin:"10px",
-      textAlign:"center",
-      backgroundColor:"#fff",
-      boxShadow:"0px 2px 5px rgba(0,0,0,0.1)"
-    }}>
+<div style={{
+border:"1px solid #ddd",
+padding:"15px",
+width:"220px",
+margin:"10px",
+borderRadius:"10px",
+textAlign:"center",
+background:"#fff"
+}}>
 
-      <img
-        src={product.image}
-        alt="product"
-        style={{width:"200px",height:"200px"}}
-      />
+<img src={product.image} width="180"/>
 
-      <h3>{product.name}</h3>
+<h3>{product.name}</h3>
 
-      <p>Category: {product.category}</p>
+<p>{product.category}</p>
 
-      <p>₹{product.price}</p>
+<p>₹{product.price}</p>
 
-      <button
-        onClick={()=>addToCart(product)}
-        style={{
-          padding:"8px",
-          backgroundColor:"#007bff",
-          color:"white",
-          border:"none",
-          borderRadius:"5px",
-          cursor:"pointer"
-        }}
-      >
-        Add To Cart
-      </button>
+<button
+onClick={()=>addToCart(product)}
+style={{
+padding:"8px",
+background:"#007bff",
+color:"white",
+border:"none",
+borderRadius:"5px"
+}}
+> 
+AddTo Cart
+</button>
 
-    </div>
+</div>
 
-  )
+)
 
 }
 
-export default ProductCard;
+export default ProductCard
