@@ -2,20 +2,22 @@ import React,{createContext,useState} from "react"
 
 export const CartContext = createContext()
 
-function CartProvider({children}){
+export const CartProvider = ({children})=>{
 
 const [cart,setCart] = useState([])
 
 function addToCart(product){
 
-const exist = cart.find(i=>i.id===product.id)
+const exist = cart.find(item=>item.id===product.id)
 
 if(exist){
 
-setCart(cart.map(i=>
-i.id===product.id
-? {...i,qty:i.qty+1}
-: i
+setCart(cart.map(item=>
+
+item.id===product.id
+? {...item,qty:item.qty+1}
+: item
+
 ))
 
 }else{
@@ -28,34 +30,31 @@ setCart([...cart,{...product,qty:1}])
 
 function increase(id){
 
-setCart(cart.map(i=>
-i.id===id
-? {...i,qty:i.qty+1}
-: i
+setCart(cart.map(item=>
+
+item.id===id
+? {...item,qty:item.qty+1}
+: item
+
 ))
 
 }
 
 function decrease(id){
 
-setCart(cart.map(i=>
-i.id===id
-? {...i,qty:i.qty-1}
-: i
-).filter(i=>i.qty>0))
+setCart(cart.map(item=>
+
+item.id===id
+? {...item,qty:item.qty-1}
+: item
+
+).filter(item=>item.qty>0))
 
 }
 
 return(
 
-<CartContext.Provider
-value={{
-cart,
-addToCart,
-increase,
-decrease
-}}
->
+<CartContext.Provider value={{cart,addToCart,increase,decrease}}>
 
 {children}
 
@@ -64,5 +63,3 @@ decrease
 )
 
 }
-
-export default CartProvider
