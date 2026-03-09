@@ -7,9 +7,13 @@ import Products from "./pages/Products"
 import Cart from "./pages/Cart"
 import Map from "./pages/Map"
 
+import {CartProvider} from "./context/CartContext"
+
 function App(){
 
 return(
+
+<CartProvider>
 
 <BrowserRouter>
 
@@ -26,6 +30,8 @@ return(
 </Routes>
 
 </BrowserRouter>
+
+</CartProvider>
 
 )
 
