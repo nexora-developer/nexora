@@ -1,23 +1,35 @@
 import React from "react"
 import products from "../data/products"
-import ProductCard from "../components/ProductCard"
 
 function Products(){
 
 return(
 
-<div
-style={{
+<div style={{padding:"40px"}}>
+
+<h2>Products</h2>
+
+<div style={{
 display:"grid",
 gridTemplateColumns:"repeat(3,1fr)",
-gap:"20px",
-padding:"30px"
-}}
->
+gap:"20px"
+}}>
 
-{products.map(p=>(
-<ProductCard key={p.id} product={p}/>
+{products.map((p)=>(
+<div key={p.id} style={{border:"1px solid #ccc",padding:"20px"}}>
+
+<img src={p.image} alt="" width="100%" />
+
+<h3>{p.name}</h3>
+
+<p>₹{p.price}</p>
+
+<button>Add To Cart</button>
+
+</div>
 ))}
+
+</div>
 
 </div>
 
