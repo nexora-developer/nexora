@@ -1,7 +1,11 @@
-import React from "react"
+import React,{useContext} from "react"
 import products from "../data/products"
 
+import {CartContext} from "../context/CartContext"
+
 function Products(){
+
+const {addToCart} = useContext(CartContext)
 
 return(
 
@@ -24,7 +28,11 @@ gap:"20px"
 
 <p>₹{p.price}</p>
 
-<button>Add To Cart</button>
+<button onClick={()=>addToCart(p)}>
+
+Add To Cart
+
+</button>
 
 </div>
 ))}
